@@ -40,17 +40,13 @@ public class DataGenerator {
     }
 
 
-
-
-
-
     public static String getRandomLogin() {
-       String login = faker.name().username();
+        String login = faker.name().username();
         return login;
     }
 
     public static String getRandomPassword() {
-       String password = faker.internet().password();
+        String password = faker.internet().password();
         return password;
     }
 
@@ -59,13 +55,13 @@ public class DataGenerator {
         }
 
         public static RegistrationDto getUser(String status) {
-            var user = new RegistrationDto(getRandomLogin(),getRandomPassword(), status);
+            var user = new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
             return user;
         }
 
         public static RegistrationDto getRegisteredUser(String status) {
-           var registeredUser = getUser(status);
-           sendRequest(registeredUser);
+            var registeredUser = getUser(status);
+            sendRequest(registeredUser);
             return registeredUser;
         }
     }
